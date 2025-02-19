@@ -1,16 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { ModeToggle } from "@/components/mode-toggle";
+import { HeroSection } from "@/components/hero-section";
+import { FeaturesSection } from "@/components/features-section";
+import { AppDownloadSection } from "@/components/app-download-section";
+import { TestimonialsSection } from "@/components/testimonials-section";
+import { CTASection } from "@/components/cta-section";
 
-const Home = () => {
+export function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">
-          Start building your amazing project here!
-        </p>
-      </div>
-    </div>
-  );
-};
+    <>
+      <header className="container flex h-16 items-center justify-between">
+        <div className="text-xl font-bold text-primary">FitTrack Pro</div>
+        <ModeToggle />
+      </header>
 
-export { Home };
+      <main className="flex min-h-screen flex-col">
+        <HeroSection />
+        <FeaturesSection />
+        <AppDownloadSection />
+        <TestimonialsSection />
+        <CTASection />
+      </main>
+
+      <footer className="border-t py-6">
+        <div className="container text-center text-sm text-muted-foreground">
+          © {new Date().getFullYear()} FitTrack Pro. 保留所有权利。
+        </div>
+      </footer>
+    </>
+  );
+}
